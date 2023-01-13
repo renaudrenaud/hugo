@@ -1,0 +1,129 @@
+2023-01-12 21:33:06 [debug    / 120kB] > parsed template: nav.html (took 24 ms)
+2023-01-12 21:33:06 [debug    / 116kB] > parsed template: header.html (took 252 ms)
+2023-01-12 21:33:07 [debug    / 107kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:07 [debug    / 104kB] > parsed template: next.html (took 579 ms)
+2023-01-12 21:33:07 [info     / 101kB] > GET /next (200 OK) [1874ms]
+2023-01-12 21:33:08 [debug    / 111kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:33:08 [debug    / 107kB] > parsed template: header.html (took 185 ms)
+2023-01-12 21:33:08 [debug    /  99kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:33:08 [debug    / 121kB] > parsed template: next.html (took 537 ms)
+2023-01-12 21:33:08 [info     / 117kB] > GET /next (200 OK) [2355ms]
+2023-01-12 21:33:09 [debug    / 121kB] > parsed template: nav.html (took 20 ms)
+2023-01-12 21:33:09 [debug    / 117kB] > parsed template: header.html (took 190 ms)
+2023-01-12 21:33:10 [debug    / 108kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:10 [debug    / 104kB] > parsed template: next.html (took 590 ms)
+2023-01-12 21:33:10 [info     / 101kB] > GET /next (200 OK) [2092ms]
+2023-01-12 21:33:12 [debug    /  92kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:33:12 [debug    / 121kB] > parsed template: header.html (took 188 ms)
+2023-01-12 21:33:12 [debug    / 112kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:12 [debug    / 109kB] > parsed template: next.html (took 529 ms)
+2023-01-12 21:33:12 [info     / 106kB] > GET /next (200 OK) [3055ms]
+2023-01-12 21:33:13 [debug    / 116kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:33:13 [debug    / 113kB] > parsed template: header.html (took 203 ms)
+2023-01-12 21:33:13 [debug    / 104kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:13 [debug    /  99kB] > parsed template: next.html (took 550 ms)
+2023-01-12 21:33:13 [info     /  96kB] > GET /next (200 OK) [1415ms]
+2023-01-12 21:33:15 [debug    / 115kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:33:16 [debug    / 112kB] > parsed template: header.html (took 192 ms)
+2023-01-12 21:33:16 [debug    / 103kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:16 [debug    / 100kB] > parsed template: next.html (took 538 ms)
+2023-01-12 21:33:16 [info     /  96kB] > GET /next (200 OK) [3490ms]
+2023-01-12 21:33:17 [debug    /  96kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:33:17 [debug    /  92kB] > parsed template: header.html (took 195 ms)
+2023-01-12 21:33:17 [debug    / 114kB] > parsed template: footer.html (took 12 ms)
+2023-01-12 21:33:17 [debug    / 111kB] > parsed template: next.html (took 559 ms)
+2023-01-12 21:33:17 [info     / 108kB] > GET /next (200 OK) [2181ms]
+2023-01-12 21:33:20 [debug    / 118kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:33:20 [debug    / 115kB] > parsed template: header.html (took 208 ms)
+2023-01-12 21:33:21 [debug    / 105kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:33:21 [debug    / 100kB] > parsed template: next.html (took 640 ms)
+2023-01-12 21:33:21 [info     / 116kB] > GET /next (200 OK) [4396ms]
+2023-01-12 21:33:24 [debug    /  91kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:33:24 [debug    / 121kB] > parsed template: header.html (took 197 ms)
+2023-01-12 21:33:24 [debug    / 111kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:33:25 [debug    / 108kB] > parsed template: next.html (took 572 ms)
+2023-01-12 21:33:25 [info     / 104kB] > GET /next (200 OK) [4647ms]
+2023-01-12 21:34:25 [error    / 115kB] need more than 0 values to unpack
+2023-01-12 21:35:26 [debug    / 131kB]   - got ip address
+2023-01-12 21:35:26 [info     / 122kB] > starting web server on port 80
+2023-01-12 21:35:35 [debug    / 119kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:35:35 [debug    / 116kB] > parsed template: header.html (took 206 ms)
+2023-01-12 21:35:35 [debug    / 106kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:35:35 [debug    / 102kB] > parsed template: index2.html (took 582 ms)
+2023-01-12 21:35:36 [info     /  98kB] > GET / (200 OK) [1111ms]
+2023-01-12 21:35:48 [debug    / 115kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:35:48 [debug    / 110kB] > parsed template: header.html (took 188 ms)
+2023-01-12 21:35:48 [debug    / 102kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:35:48 [debug    /  98kB] > parsed template: next.html (took 539 ms)
+2023-01-12 21:35:48 [info     / 122kB] > GET /next (200 OK) [13952ms]
+2023-01-12 21:35:55 [debug    / 114kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:35:55 [debug    / 111kB] > parsed template: header.html (took 195 ms)
+2023-01-12 21:35:56 [debug    / 101kB] > parsed template: footer.html (took 12 ms)
+2023-01-12 21:35:56 [debug    /  98kB] > parsed template: next.html (took 609 ms)
+2023-01-12 21:35:56 [info     / 121kB] > GET /next (200 OK) [8172ms]
+2023-01-12 21:35:58 [debug    / 111kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:35:58 [debug    / 107kB] > parsed template: header.html (took 185 ms)
+2023-01-12 21:35:58 [debug    /  99kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:35:58 [debug    / 120kB] > parsed template: next.html (took 531 ms)
+2023-01-12 21:35:59 [info     / 117kB] > GET /next (200 OK) [3585ms]
+2023-01-12 21:36:01 [debug    / 101kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:36:01 [debug    /  97kB] > parsed template: header.html (took 189 ms)
+2023-01-12 21:36:01 [debug    / 122kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:36:01 [debug    / 118kB] > parsed template: next.html (took 547 ms)
+2023-01-12 21:36:01 [info     / 115kB] > GET /next (200 OK) [3594ms]
+2023-01-12 21:36:04 [debug    / 103kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:36:04 [debug    /  99kB] > parsed template: header.html (took 187 ms)
+2023-01-12 21:36:04 [debug    / 122kB] > parsed template: footer.html (took 22 ms)
+2023-01-12 21:36:04 [debug    / 119kB] > parsed template: next.html (took 554 ms)
+2023-01-12 21:36:04 [info     / 116kB] > GET /next (200 OK) [3301ms]
+2023-01-12 21:36:06 [debug    / 100kB] > parsed template: nav.html (took 13 ms)
+2023-01-12 21:36:06 [debug    /  96kB] > parsed template: header.html (took 192 ms)
+2023-01-12 21:36:07 [debug    / 121kB] > parsed template: footer.html (took 15 ms)
+2023-01-12 21:36:07 [debug    / 118kB] > parsed template: next.html (took 570 ms)
+2023-01-12 21:36:07 [info     / 114kB] > GET /next (200 OK) [3528ms]
+2023-01-12 21:36:08 [debug    / 115kB] > parsed template: nav.html (took 15 ms)
+2023-01-12 21:36:08 [debug    / 111kB] > parsed template: header.html (took 209 ms)
+2023-01-12 21:36:08 [debug    / 101kB] > parsed template: footer.html (took 12 ms)
+2023-01-12 21:36:09 [debug    /  97kB] > parsed template: next.html (took 647 ms)
+2023-01-12 21:36:09 [info     /  93kB] > GET /next (200 OK) [2575ms]
+2023-01-12 21:36:11 [debug    / 105kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:36:11 [debug    / 101kB] > parsed template: header.html (took 196 ms)
+2023-01-12 21:36:12 [debug    / 124kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:36:12 [debug    / 104kB] > parsed template: next.html (took 768 ms)
+2023-01-12 21:36:12 [info     / 101kB] > GET /next (200 OK) [4240ms]
+2023-01-12 21:36:14 [debug    /  91kB] > parsed template: nav.html (took 15 ms)
+2023-01-12 21:36:14 [debug    /  88kB] > parsed template: header.html (took 203 ms)
+2023-01-12 21:36:14 [debug    / 110kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:36:14 [debug    / 107kB] > parsed template: next.html (took 656 ms)
+2023-01-12 21:36:14 [info     / 103kB] > GET /next (200 OK) [3410ms]
+2023-01-12 21:36:17 [debug    /  92kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:36:17 [debug    /  89kB] > parsed template: header.html (took 207 ms)
+2023-01-12 21:36:17 [debug    / 110kB] > parsed template: footer.html (took 12 ms)
+2023-01-12 21:36:17 [debug    / 107kB] > parsed template: next.html (took 599 ms)
+2023-01-12 21:36:17 [info     / 103kB] > GET /next (200 OK) [3456ms]
+2023-01-12 21:36:18 [debug    / 114kB] > parsed template: nav.html (took 15 ms)
+2023-01-12 21:36:18 [debug    / 109kB] > parsed template: header.html (took 242 ms)
+2023-01-12 21:36:19 [debug    / 101kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:36:19 [debug    / 125kB] > parsed template: next.html (took 600 ms)
+2023-01-12 21:36:19 [info     / 121kB] > GET /next (200 OK) [2535ms]
+2023-01-12 21:36:20 [debug    / 120kB] > parsed template: nav.html (took 26 ms)
+2023-01-12 21:36:20 [debug    / 117kB] > parsed template: header.html (took 194 ms)
+2023-01-12 21:36:20 [debug    / 109kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:36:20 [debug    / 105kB] > parsed template: next.html (took 543 ms)
+2023-01-12 21:36:20 [info     / 102kB] > GET /next (200 OK) [2363ms]
+2023-01-12 21:36:22 [debug    /  99kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:36:22 [debug    /  96kB] > parsed template: header.html (took 183 ms)
+2023-01-12 21:36:22 [debug    / 121kB] > parsed template: footer.html (took 12 ms)
+2023-01-12 21:36:22 [debug    / 118kB] > parsed template: next.html (took 544 ms)
+2023-01-12 21:36:22 [info     / 114kB] > GET /next (200 OK) [2675ms]
+2023-01-12 21:36:26 [debug    / 115kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:36:26 [debug    / 112kB] > parsed template: header.html (took 195 ms)
+2023-01-12 21:36:26 [debug    / 103kB] > parsed template: footer.html (took 10 ms)
+2023-01-12 21:36:27 [debug    /  98kB] > parsed template: next.html (took 618 ms)
+2023-01-12 21:36:27 [info     / 122kB] > GET /next (200 OK) [5117ms]
+2023-01-12 21:37:12 [debug    /  87kB] > parsed template: nav.html (took 14 ms)
+2023-01-12 21:37:12 [debug    / 118kB] > parsed template: header.html (took 201 ms)
+2023-01-12 21:37:12 [debug    / 110kB] > parsed template: footer.html (took 11 ms)
+2023-01-12 21:37:12 [debug    / 106kB] > parsed template: about.html (took 547 ms)
+2023-01-12 21:37:13 [info     / 103kB] > GET /about (200 OK) [46676ms]
+2023-01-12 21:38:13 [error    / 120kB] need more than 0 values to unpack
