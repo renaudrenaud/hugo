@@ -1,22 +1,26 @@
-###############################################################
-# WS2812 RGB LED Ring Light Breathing
-# with the Raspberry Pi Pico Microcontroller
-#
-# by Joshua Hrisko, Maker Portal LLC (c) 2021
-#
-# Based on the Example neopixel_ring at:
-# https://github.com/raspberrypi/pico-micropython-examples
-#
-# Added some mix of different things by renaudrenaud
-###############################################################
-#
+"""
+2023-01
+In January 2023 Hugo arrived in this world
+
+Catherine & Renaud built a lamp for his birth
+The lamp is a lithophabe 
+
+
+https://github.com/renaudrenaud/hugo
+
+"""
 import array, time
-import machine
 from machine import Pin
 import neopixel
 import rp2
+
 import _thread
 
+from phew import logging, server, connect_to_wifi
+from phew.template import render_template
+from secret import ssid, password
+
+interrupt_flag = False
 
 #
 ############################################
@@ -24,15 +28,10 @@ import _thread
 ############################################
 #
 # WS2812 LED Ring Configuration
-led_count = 16 # number of LEDs in ring light
-PIN_NUM = 13 # pin connected to ring light
-brightness = .1 # 0.1 = darker, 1.0 = brightest
+led_count = 16 		# number of LEDs in ring light
+PIN_NUM = 13 		# pin connected to ring light
+brightness = .3 	# 0.1 = darker, 1.0 = brightest
 
-
-# For the button on GP5 / Pin 7
-interrupt_flag = False
-pin = Pin(5,Pin.IN,Pin.PULL_UP)
-print("running")
 
 # For neopixel ASSEMBLER
 @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24) # PIO configuration
@@ -51,7 +50,6 @@ def ws2812():
     label("do_zero")
     nop()                   .side(0)    [T2 - 1]
     wrap()
-
 
 # Create the StateMachine with the ws2812 program, outputting on pre-defined pin
 # at the 8MHz frequency
@@ -96,13 +94,7 @@ def breathing_led(color):
                     return
             pixels_show(ii/127)
             time.sleep(0.05)
-        
 
-# The callback interrupt to catch button pressed
-def callback(pin):
-    global interrupt_flag
-    interrupt_flag = True
-    print("Button is pressed !") 
 
 #
 ############################################
@@ -126,10 +118,10 @@ rgbPastelBlue = (174, 198, 207)
 rgbDustyRose = (220, 174, 150)
 
 
-# colors = [red,green,blue,yellow,cyan,white]
+
 colors = [white, 
           yellow,
-          rgbLightYellow3, 
+          rgbLightYellow3,
           rgbLightYellow4, 
           cyan,
           blank,
@@ -140,44 +132,153 @@ colors = [white,
           red, 
           green,
           blue,
-          blank
+          yellow
           ]
+
+
+colors_name = ["white", "yellow", "rgbLightYellow3", "rgbLightYellow4","cyan",
+              "blank",
+               "rgbDustyRose", "rgbPastelPink", "rgbPastelBlue",
+               "blank",
+               "red", "green","blue","yellow"
+              ]
+
+current_color = 0
+
 
 led = machine.Pin(17, machine.Pin.OUT)
 
+def running_led(color, led_count):
+    global interrupt_flag
+    interrupt_flag = False
+    
+    # number of times to cycle 360-degrees
+    cycles = 10 
+    print("Running pixel")
+    # Range of LEDs stored in an array
+    ar = array.array("I", [0 for _ in range(led_count)])
+    
+    blank = (0,0,0)
 
-pin.irq(trigger=Pin.IRQ_FALLING, handler=callback)
-
-while True: # loop indefinitely
-    color = (255,0,0) # looping color
-    blank = (0,0,0) # color for other pixels
-    cycles = 10 # number of times to cycle 360-degrees
-   
-    for color in colors: # emulate breathing LED (similar to Amazon's Alexa)
-        breathing_led(color)
-        time.sleep(0.1) # wait between colors
-
-    for color in colors:
-        if color != blank:
-            for ii in range(int(cycles*len(ar))+1):
-                for jj in range(len(ar)):
-                    if jj==int(ii%led_count): # in case we go over number of pixels in array
-                        pixels_set(jj,color) # color and loop a single pixel
-                    else:
-                        pixels_set(jj,blank) # turn others off
-                    if interrupt_flag == True:
-                        # interrupt_flag == False
-                        break
-                if interrupt_flag == True:
-                    interrupt_flag == False
-                    break
-                pixels_show() # update pixel colors
-                time.sleep(0.05) # wait 50ms
-                if ii % 2 == 0:
-                    led.value(1)
+    while True:
+        for ii in range(int(cycles*len(ar))+1):
+            for jj in range(len(ar)):
+                if jj==int(ii%led_count): # in case we go over number of pixels in array
+                    pixels_set(jj,color) # color and loop a single pixel
                 else:
-                    led.value(0)
-         
+                    pixels_set(jj,blank) # turn others off
+            pixels_show() # update pixel colors
+            
+            if interrupt_flag == True:
+                interrupt_flag == False
+                return
+                break
+            time.sleep(0.05) # wait 50ms
+            if ii % 2 == 0:
+                led.value(1)
+            else:
+                led.value(0)
 
 
+
+def neopixel_animation():
+    global interrupt_flag
+    print("starting Core 0")
+    while True: # loop indefinitely
+        color = (255,0,0) # looping color
+        blank = (0,0,0) # color for other pixels
+        cycles = 10 # number of times to cycle 360-degrees
+       
+        for color in colors: # emulate breathing LED (similar to Amazon's Alexa)
+            print("calling breathe")
+            breathing_led(color)
+            time.sleep(0.1) # wait between colors
+
+        for color in colors:
+            print("calling running led")
+            running_led(color, led_count)
+            
+
+
+###################################################################
+
+print("ip: " + connect_to_wifi(ssid, password))
+username = ""
+logged = False
+
+
+@server.route("/")
+def index(request):
+    if logged == False:
+        message = "Press Next in the top to go to the next lamp animation."
+    
+    return render_template("index2.html", name=username, title="Hugo Lamp", message=message)
+
+@server.route("/about")
+def about(request):
+    global interrupt_flag
+    interrupt_flag = True
+    return render_template("about.html", name=username, title="About this Site")
+
+@server.route("/next")
+def about(request):
+    """
+    We want to show the next animation
+    """
+    global interrupt_flag
+    global current_color
+    global cur_col
+    
+    interrupt_flag = True
+    current_color = current_color + 1
+    
+    if current_color < 14:
+        cur_col = colors_name[current_color]
+        cur_col = " breathe " + cur_col
+    elif current_color < 28:
+        cur_col = " run " + colors_name[current_color - 14]
+    else:
+        current_color = -1
+        cur_col = " breathe " + colors_name[current_color]
+    
+    return render_template("next.html", current_color=str(cur_col), title="Activate Next animation")
+
+@server.route("/login", ["POST",'GET'])
+def login_form(request):
+    print(request.method)
+    if request.method == 'GET':
+        return render_template("login.html")
+    if request.method == 'POST':    
+        username = request.form.get("username", None)
+        password = request.form.get("password", None)
+
+        if username == "hugo" and password == "hugo":
+            logged = True
+            message = """<p>Welcome back, let s define the light.</p>
+                          <div class='mb-3'>
+                          <button type="submit" value="Login">White</button>
+                          <button type="submit" value="Login">Blue</button>
+                          <button type="submit" value="Login">Red</button>
+                          <button type="submit" value="Login">Stop</button>
+                            </div>
+                        """
+            # global interrupt_flag
+            interrupt_flag = True
+            print("Button is pressed !") 
+
+            return render_template('index2.html', message=message) #content = f"<h1>Welcome back {username}!</h1>")
+            
+        else:
+            logged = False
+            return render_template('default.html', content = "Sorry, invalid username or password")
+
+"""@server.catchall()
+def my_catchall(request):
+  return "No matching route", 404
+"""
+
+_thread.start_new_thread(neopixel_animation,())
+
+print("starting core 1")
+server.run()
 
